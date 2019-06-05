@@ -30,11 +30,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_sample` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(250) NOT NULL,
-  `last_name` varchar(250) NOT NULL
+  `first_name` varchar(250)  NULL,
+  `last_name` varchar(250)  NULL,
+  `identification` varchar(250)  NULL,
+  `estado` varchar(250)  NULL,
+  `birthDate` varchar(250)  NULL,
+  `email` varchar(250)  NULL,
+  `observation` varchar(250)  NULL,
+  `DateEntry` varchar(250)  NULL,
+  `position` varchar(250)  NULL,
+  `departament` varchar(250)  NULL,
+  `salary` varchar(250)  NULL,
+  `parcial` varchar(250)  NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE `Provincia`(
+  `id` int NOT NULL,
   `nombre_provincia` varchar(30) NOT NULL,
   `capital_provincia` varchar(30) NOT NULL,
   `descripcion_provincia` text NULL,
@@ -42,17 +53,12 @@ CREATE TABLE `Provincia`(
   `superficie_provincia` varchar(10) NOT NULL,
   `latitud_provincia` varchar(10) NOT NULL,
   `longitud_provincia` varchar(10) NOT NULL,
-  `id_region` int NOT NULL, 
-)ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
+  `id_region` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 INSERT INTO `Provincia`
-(`nombre_provincia`,`capital_provincia`,`descripcion_provincia`,`poblacion_provincia`,`superficie_p
-rovincia`,`latitud_provincia`,`longitud_provincia`,`id_region`) VALUES ('Azuay','Cuenca','Es
-llamada la Atenas del Ecuador por su arquitectura, su diversidad cultural, su aporte a las
-artes, ciencias y letras ecuatorianas y por ser el lugar de nacimiento de muchos
-personajes ilustres de la sociedad
-ecuatoriana','569.42','122.00','-2.902222','-79.005261','1');
+(`nombre_provincia`,`capital_provincia`,`descripcion_provincia`,`poblacion_provincia`,`superficie_provincia`,`latitud_provincia`,`longitud_provincia`,`id_region`) 
+VALUES ('Pichincha','Quito','La Provincia de Pichincha es una de las 24 provincias que conforman la República del Ecuador. Se encuentra ubicada al norte del país, en la zona geográfica conocida como sierra. Su capital administrativa es la ciudad de Quito, la cual además es su urbe más poblada y la capital del país. Es también el principal centro comercial del país.','2576287.00','9612.00','-0.25','-78.583333','1');
 
 --
 -- Dumping data for table `tbl_sample`
@@ -76,6 +82,8 @@ INSERT INTO `tbl_sample` (`id`, `first_name`, `last_name`) VALUES
 --
 ALTER TABLE `tbl_sample`
   ADD PRIMARY KEY (`id`);
+ALTER TABLE `Provincia`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -85,9 +93,12 @@ ALTER TABLE `tbl_sample`
 -- AUTO_INCREMENT for table `tbl_sample`
 --
 ALTER TABLE `tbl_sample`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
+ALTER TABLE `Provincia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

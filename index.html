@@ -39,9 +39,9 @@
                 <tbody>
                     <tr ng-repeat="name in namesData">
                         <td>{{name.first_name}}</td>
-                        <td>{{name.last_name}}</td>
+                        <td>{{name.id}}</td>
                         <!-- <td><button type="button" ng-click="fetchSingleData(name.id)" class="btn btn-warning btn-xs">Edit</button></td> -->
-                        <td>{{'estado'}}</td>
+                        <td>{{'Activo'}}</td>
                         <!-- <td><button type="button" ng-click="deleteData(name.id)" class="btn btn-danger btn-xs">Delete</button></td> -->
                     </tr>
                 </tbody>
@@ -53,17 +53,17 @@
                     </div>
 
                     <div class="col">
-                        <button type="button" name="add_button" ng-click="addData()" class="btn btn-warning">Reporte</button>
+                        <button ng-click="clicked()" class="btn btn-warning">Reporte</button>
+                        <!-- <button type="button" name="add_button" ng-click="addData()" class="btn btn-warning">Reporte</button> -->
                     </div>
 
                     <div class="col">
-                        <button type="button" name="add_button" ng-click="addData()" class="btn btn-danger">Salir</button>
+                        <button ng-click="clicked()" class="btn btn-danger">Salir</button>
+                        <!-- <button type="button" name="add_button" ng-click="addData()" class="btn btn-danger">Salir</button> -->
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 </body>
 
@@ -79,15 +79,15 @@
                 </div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Datos Personales</a>
+                        <a class="nav-link active" id="personalData-tab" data-toggle="tab" href="#personalData" role="tab" aria-controls="personalData" aria-selected="true">Datos Personales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Datos Laborales</a>
+                        <a class="nav-link" id="dataLaboral-tab" data-toggle="tab" href="#dataLaboral" role="tab" aria-controls="dataLaboral" aria-selected="false">Datos Laborales</a>
                     </li>
                 </ul>
 
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-pane fade show active" id="personalData" role="tabpanel" aria-labelledby="personalData-tab">
 
                         <div class="row">
                             <div class="form-group col-xs-6">
@@ -103,70 +103,70 @@
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label>Cedula</label>
-                                <input type="number" name="first_name" ng-model="first_name" class="form-control" />
+                                <input type="text" name="identification" ng-model="identification" class="form-control" />
                             </div>
                             <div class="form-group col-xs-6">
                                 <label>Provincia</label>
-                                <input type="text" name="first_name" ng-model="first_name" class="form-control" />
+                                <input type="text" name="estado" ng-model="estado" class="form-control" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label>Fecha de Nacimiento</label>
-                                <input type="date" name="first_name" ng-model="first_name" class="form-control" />
+                                <input type="text" name="birthDate" ng-model="birthDate" class="form-control" />
                             </div>
                             <div class="form-group col-xs-6">
                                 <label>Email</label>
-                                <input type="email" name="first_name" ng-model="first_name" class="form-control" />
+                                <input type="text" name="email" ng-model="email" class="form-control" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
                                 <label>Observaciones</label>
-                                <input type="text" name="first_name" ng-model="first_name" class="form-control" />
+                                <input type="text" name="observation" ng-model="observation" class="form-control" />
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="tab-pane fade" id="dataLaboral" role="tabpanel" aria-labelledby="dataLaboral-tab">
 
 
                         <div class="row">
                             <div class="form-group col-xs-6">
-                                <label>Nombres</label>
-                                <input type="text" name="first_name" ng-model="first_name" class="form-control" />
+                                <label>Fecha de Ingreso</label>
+                                <input type="text" name="DateEntry" ng-model="DateEntry" class="form-control" />
                             </div>
                             <div class="form-group col-xs-6">
-                                <label>Apellidos</label>
-                                <input type="text" name="last_name" ng-model="last_name" class="form-control" />
+                                <label>Cargo</label>
+                                <input type="text" name="position" ng-model="position" class="form-control" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-xs-6">
-                                <label>Cedula</label>
-                                <input type="number" name="first_name" ng-model="first_name" class="form-control" />
+                                <label>Departamento</label>
+                                <input type="text" name="departament" ng-model="departament" class="form-control" />
                             </div>
                             <div class="form-group col-xs-6">
                                 <label>Provincia</label>
-                                <input type="text" name="first_name" ng-model="first_name" class="form-control" />
+                                <input type="text" name="provincia" ng-model="provincia" class="form-control" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-xs-6">
-                                <label>Fecha de Nacimiento</label>
-                                <input type="date" name="first_name" ng-model="first_name" class="form-control" />
+                                <label>Sueldo</label>
+                                <input type="text" name="salary" ng-model="salary" class="form-control" />
                             </div>
                             <div class="form-group col-xs-6">
-                                <label>Email</label>
-                                <input type="email" name="first_name" ng-model="first_name" class="form-control" />
+                                <label>Jornada Parcial</label>
+                                <input type="checkbox" name="parcial" ng-model="parcial" class="form-control" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12">
                                 <label>Observaciones</label>
-                                <input type="text" name="first_name" ng-model="first_name" class="form-control" />
+                                <input type="text" name="observaciones" ng-model="observaciones" class="form-control" />
                             </div>
                         </div>
                     </div>
